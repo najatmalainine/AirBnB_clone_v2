@@ -1,24 +1,13 @@
 #!/usr/bin/python3
-"""This is the user class"""
+"""This module defines a class User"""
+from models.base_model import Base
 from models.base_model import BaseModel
-from sqlalchemy.ext.declarative import declarative_base
-from models.base_model import BaseModel, Base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column
+from sqlalchemy import String
 
 
-class User(BaseModel):
 class User(BaseModel, Base):
-    """This is the class for user
-    Attributes:
-        email: email address
-        password: password for you login
-        first_name: first name
-        last_name: last name
-    """
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+    """This class defines a user by various attributes"""
     __tablename__ = "users"
     email = Column(String(128), nullable=False)
     password = Column(String(128), nullable=False)
